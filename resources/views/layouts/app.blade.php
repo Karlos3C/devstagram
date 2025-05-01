@@ -15,7 +15,7 @@
     <header class="p-5 border-b border-gray-200 bg-white shadow">
         <div class="container mx-auto flex justify-between items-center">
 
-            <h1 class="text-3xl font-black">
+            <h1 class="text-xl md:text-3xl font-black">
                 <a href="/">
                     DevStagram
                 </a>
@@ -32,12 +32,19 @@
                             <path stroke-linecap="round" stroke-linejoin="round"
                                 d="M16.5 12.75a4.5 4.5 0 1 1-9 0 4.5 4.5 0 0 1 9 0ZM18.75 10.5h.008v.008h-.008V10.5Z" />
                         </svg>
-
-                        Crear
+                        <span class="hidden md:inline">Crear</span>
                     </a>
                     <a href="{{ route('posts.index', auth()->user()->username) }}"
-                        class="font-bold uppercase text-gray-600 text-sm">
-                        Hola: <span class="font-normal"> {{ auth()->user()->username }} </span>
+                        class="md:gap-2 bg-white border p-2 text-gray-600 rounded text-sm cursor-pointer font-bold uppercase">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="md:hidden block size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                        </svg>
+
+                        <p class="hidden md:inline-block">
+                            Hola: <span class="font-normal"> {{ auth()->user()->username }} </span>
+                        </p>
                     </a>
                     <form action="{{ route('logout') }}" method="POST">
                         @csrf
